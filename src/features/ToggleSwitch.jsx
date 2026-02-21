@@ -9,7 +9,7 @@ export default function ToggleSwitch() {
     <>
       <h4 className="text-3xl">User Status : {active ? "Active" : "Inactive"}</h4>      
       <hr />
-      <Button variant="danger"onClick={handleClick}>{active ? "Make Inactive" : "Make Active"}</Button>
+      <Button variant="danger" onClick={handleClick}>{active ? "Make Inactive" : "Make Active"}</Button>
     </>
   );
 }

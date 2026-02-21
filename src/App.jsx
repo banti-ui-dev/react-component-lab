@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ToggleSwitch from './features/ToggleSwitch'
+import Counter from './features/Counter'
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
 
   return (
     <>
-      <ToggleSwitch/>  
+      {/* <ToggleSwitch/> */}
+      <Counter/>
     </>
   )
 }
