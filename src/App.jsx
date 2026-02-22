@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ToggleSwitch from './features/ToggleSwitch'
 import Counter from './features/Counter'
+import TodoList from './features/TodoList'
+import ControlledInput from './features/ControlledInput'
 
 
 function App() {
@@ -12,7 +14,9 @@ function App() {
   return (
     <>
       {/* <ToggleSwitch/> */}
-      <Counter/>
+      {/* <Counter/> */}
+      {/* <TodoList/> */}
+      <ControlledInput/>
     </>
   )
 }
