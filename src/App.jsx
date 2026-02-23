@@ -7,6 +7,7 @@ import Counter from './features/Counter'
 import TodoList from './features/TodoList'
 import ControlledInput from './features/ControlledInput'
 import ApiSearchFilter from './features/ApiSearchFilter'
+import DebouncedSearch from './features/debouncedSearch'
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
       {/* <Counter/> */}
       {/* <TodoList/> */}
       {/* <ControlledInput/> */}
-      <ApiSearchFilter/>
+      {/* <ApiSearchFilter/> */}
+      <DebouncedSearch/>
     </>
   )
 }
