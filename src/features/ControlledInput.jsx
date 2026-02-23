@@ -10,6 +10,10 @@ const ControlledInput = () => {
     setTextonClick((previous) => [...previous, text]);
     setText("");
   };
+  const handledelete = (index) => {
+    const updateList = textonClick.filter((_,i) => i !== index)
+    setTextonClick(updateList)
+  }
   return (
     <div>
       <input
@@ -20,9 +24,9 @@ const ControlledInput = () => {
       />
       <Button onClick={handleAdd}>Add</Button>
       <br />
-      <ul>
+      <ul className="flex">
         {textonClick.map((item, index) => (
-          <li key={index}>{index+1}. {item}</li>
+          <li key={index}>{index+1}. {item} <Button className="size-6 mr-4" onClick={() => handledelete(index)}>X</Button></li>
         ))}
       </ul>
     </div>
