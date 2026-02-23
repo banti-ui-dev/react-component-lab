@@ -6,6 +6,7 @@ import ToggleSwitch from './features/ToggleSwitch'
 import Counter from './features/Counter'
 import TodoList from './features/TodoList'
 import ControlledInput from './features/ControlledInput'
+import ApiSearchFilter from './features/ApiSearchFilter'
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
     <>
       {/* <ToggleSwitch/> */}
       {/* <Counter/> */}
-      <TodoList/>
+      {/* <TodoList/> */}
       {/* <ControlledInput/> */}
+      <ApiSearchFilter/>
     </>
   )
 }

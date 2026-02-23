@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../components/Button";
 
 const TodoList = () => {
   const [task, setTask] = useState("");
-  const [todo, setTodo] = useState([]);
+  const [todo, setTodo] = useState(() => {
+    const savedTodos = sessionStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
 
+  useEffect(() => {
+    sessionStorage.setItem("todos", JSON.stringify(todo));
+  }, [todo]);
+  
   const handleAdd = () => {
     if (task.trim() === "") return;
     setTodo((prev) => [...prev, task]);
-    console.log(setTodo);
-
     setTask("");
   };
-  const handleDel = (abc) => {
-    const newTodo = todo.filter((_, i) => i !== abc);
+  const handleDel = (index) => {
+    const newTodo = todo.filter((_, i) => i !== index);
     setTodo(newTodo);
   };
   return (
