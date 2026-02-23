@@ -15,8 +15,8 @@ function App() {
     <>
       {/* <ToggleSwitch/> */}
       {/* <Counter/> */}
-      {/* <TodoList/> */}
-      <ControlledInput/>
+      <TodoList/>
+      {/* <ControlledInput/> */}
     </>
   )
 }
