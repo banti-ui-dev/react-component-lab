@@ -8,6 +8,7 @@ import TodoList from './features/TodoList'
 import ControlledInput from './features/ControlledInput'
 import ApiSearchFilter from './features/ApiSearchFilter'
 import DebouncedSearch from './features/debouncedSearch'
+import Pagination from './features/Pagination'
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       {/* <TodoList/> */}
       {/* <ControlledInput/> */}
       {/* <ApiSearchFilter/> */}
-      <DebouncedSearch/>
+      {/* <DebouncedSearch/> */}
+      <Pagination/>
     </>
   )
 }
