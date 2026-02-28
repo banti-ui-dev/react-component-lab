@@ -9,6 +9,8 @@ import ControlledInput from './features/ControlledInput'
 import ApiSearchFilter from './features/ApiSearchFilter'
 import DebouncedSearch from './features/debouncedSearch'
 import Pagination from './features/Pagination'
+import ThrottleDemo from './features/throttle-demo'
+import StopWatch from './features/stop-watch'
 
 
 function App() {
@@ -22,7 +24,9 @@ function App() {
       {/* <ControlledInput/> */}
       {/* <ApiSearchFilter/> */}
       {/* <DebouncedSearch/> */}
-      <Pagination/>
+      {/* <Pagination/> */}
+      {/* <ThrottleDemo/> */}
+      <StopWatch/>
     </>
   )
 }
