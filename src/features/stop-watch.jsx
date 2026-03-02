@@ -4,45 +4,38 @@ const StopWatch = () => {
     const[hrs, setHrs] = useState(0)
     const[min, setMin] = useState(0)
     const[sec, setSec] = useState(0)
-    const[milisec, setMilicec] = useState(0)
+    const[milisec, setMilisec] = useState(0)
 
-    let thread = useRef(null)
-
+    const refName = useRef(null)
     var ms = 0;
     var s = 0;
-    var m = 0
-    var h = 0
+    var m = 0;
+    var h = 0;
     const startTimer = () => {
         ms++
-        setMilicec(ms)
-        if(ms === 999){
-            ms = 0
+        setMilisec(ms)
+        if(ms === 100){
             s++
+            ms = 0
             setSec(s)
             if(s === 60){
-                s = 0
                 m++
+                s = 0
                 setMin(m)
                 if(m === 60){
-                    m = 0
                     h++
+                    m = 0
                     setHrs(h)
                 }
             }
         }
     }
     const handleStart = () => {
-        thread.current = setInterval(startTimer,1)
+        refName.current = setInterval(startTimer, 10)
     }
-    const handleClear = () => {
-        clearInterval(thread.current)
-        setMilicec(0)
-        setSec(0)
-        setMin(0)
-        setHrs(0)
+    const handleReset = () => {
+        clearInterval(refName.current)
     }
-
-
   return (
     <div> 
       <h1 className='text-2xl pb-4'>Stop Watch</h1>
@@ -54,10 +47,9 @@ const StopWatch = () => {
       </div>
       <div className='mt-3'>
         <button className='px-4 py-2 border rounded-lg bg-blue-800 text-white mr-2' onClick={handleStart}>start</button>
-        <button className='px-4 py-2 border rounded-lg bg-blue-800 text-white mr-2' onClick={handleClear}>Reset</button>
+        <button className='px-4 py-2 border rounded-lg bg-blue-800 text-white mr-2' onClick ={handleReset}>Reset</button>
       </div>
     </div>
-
   )
 }
 
