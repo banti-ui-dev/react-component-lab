@@ -1,56 +1,63 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from "react";
+import Button from "../components/Button";
 
 const StopWatch = () => {
-    const[hrs, setHrs] = useState(0)
-    const[min, setMin] = useState(0)
-    const[sec, setSec] = useState(0)
-    const[milisec, setMilisec] = useState(0)
+  const[msec, setMsec] = useState(0)
+  const[sec, setSec] = useState(0)
+  const[min, setMin] = useState(0)
+  const[hrs, setHrs] = useState(0)
+  const thread = useRef(null)
+  var ms = 0;
+  var s = 0;
+  var m = 0;
+  var h = 0;
 
-    const refName = useRef(null)
-    var ms = 0;
-    var s = 0;
-    var m = 0;
-    var h = 0;
-    const startTimer = () => {
-        ms++
-        setMilisec(ms)
-        if(ms === 100){
-            s++
-            ms = 0
-            setSec(s)
-            if(s === 60){
-                m++
-                s = 0
-                setMin(m)
-                if(m === 60){
-                    h++
-                    m = 0
-                    setHrs(h)
-                }
-            }
+  const startTimer = () => {
+    ms++
+    setMsec(ms)
+    if(ms === 100){
+      ms = 0;
+      s++
+      setSec(s)
+      if(s === 60){
+        s = 0;
+        m++
+        setMin(m)
+        if(m === 60){
+          m=0
+          h++
+          setHrs(h)
         }
+      }
     }
-    const handleStart = () => {
-        refName.current = setInterval(startTimer, 10)
-    }
-    const handleReset = () => {
-        clearInterval(refName.current)
-    }
+  }
+
+  const handeleStart = () => {
+    thread.current = setInterval(startTimer, 10)
+  }
+  const handleStop = () => {
+    clearInterval(thread.current)
+  }
+
+  const handleReset = () => {
+    clearInterval(thread.current)
+    setHrs(0)
+    setMin(0)
+    setSec(0)
+    setMsec(0)
+  }
+  
   return (
-    <div> 
-      <h1 className='text-2xl pb-4'>Stop Watch</h1>
-      <div className='flex'>
-        <div className='px-3 py-2 border rounded-2xl mr-0.5 min-w-24'>{hrs} h</div>
-        <div className='px-3 py-2 border rounded-2xl mr-0.5 min-w-24'>{min} m</div>
-        <div className='px-3 py-2 border rounded-2xl mr-0.5 min-w-24'>{sec} s</div>
-        <div className='px-3 py-2 border rounded-2xl mr-0.5 min-w-24'>{milisec} ml</div>
-      </div>
-      <div className='mt-3'>
-        <button className='px-4 py-2 border rounded-lg bg-blue-800 text-white mr-2' onClick={handleStart}>start</button>
-        <button className='px-4 py-2 border rounded-lg bg-blue-800 text-white mr-2' onClick ={handleReset}>Reset</button>
+    <div className="w-96 flex flex-col justify-center">
+      <h1 className="text-2xl text-center">Stop Watch</h1>
+      <h2 className="text-xl my-4  text-center">{hrs} Hrs : {min} Min : {sec} Sec : {msec} MlSec</h2>
+      <div className="flex justify-around">
+        <Button onClick={handeleStart}>Start</Button>        
+        <Button onClick={handleStop}>Stop</Button>
+        <Button onClick={handleReset}>Reset</Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default StopWatch
+export default StopWatch;

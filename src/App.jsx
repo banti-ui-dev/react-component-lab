@@ -13,6 +13,7 @@ import ThrottleDemo from './features/throttle-demo'
 import StopWatch from './features/stop-watch'
 import CaroselDemo from './features/carosel-demo'
 import CheckBox from './features/CheckBox'
+import Stopwatchnew from './features/stopWatch'
 
 
 function App() {
@@ -28,9 +29,10 @@ function App() {
       {/* <DebouncedSearch/> */}
       {/* <Pagination/> */}
       {/* <ThrottleDemo/> */}
-      {/* <StopWatch/> */}
-      <CaroselDemo/>
+      <StopWatch/>
+      {/* <CaroselDemo/> */}
       {/* <CheckBox/> */}
+      <Stopwatchnew/>
     </>
   )
 }
