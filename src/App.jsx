@@ -29,8 +29,8 @@ function App() {
       {/* <Pagination/> */}
       {/* <ThrottleDemo/> */}
       {/* <StopWatch/> */}
-      {/* <CaroselDemo/> */}
-      <CheckBox/>
+      <CaroselDemo/>
+      {/* <CheckBox/> */}
     </>
   )
 }
