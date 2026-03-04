@@ -14,6 +14,8 @@ import StopWatch from './features/stop-watch'
 import CaroselDemo from './features/carosel-demo'
 import CheckBox from './features/CheckBox'
 import Stopwatchnew from './features/stopWatch'
+import Formdemo from './features/formDemo'
+import FormikDemo from './features/formikDemo'
 
 
 function App() {
@@ -29,10 +31,12 @@ function App() {
       {/* <DebouncedSearch/> */}
       {/* <Pagination/> */}
       {/* <ThrottleDemo/> */}
-      <StopWatch/>
+      {/* <StopWatch/> */}
       {/* <CaroselDemo/> */}
       {/* <CheckBox/> */}
-      <Stopwatchnew/>
+      {/* <Stopwatchnew/> */}
+      {/* <Formdemo/> */}
+      <FormikDemo/>
     </>
   )
 }

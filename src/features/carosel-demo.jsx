@@ -35,6 +35,7 @@ const CaroselDemo = () => {
             alt="Banner Image"
             style={{ width: "400px", height: "350px" }}
           />
+          <input type="range" min="1" max ="20" value={id}/>
         </div>
         <div>
           <Button onClick={handlerNext}>Right</Button>
