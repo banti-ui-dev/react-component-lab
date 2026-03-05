@@ -16,6 +16,7 @@ import CheckBox from './features/CheckBox'
 import Stopwatchnew from './features/stopWatch'
 import Formdemo from './features/formDemo'
 import FormikDemo from './features/formikDemo'
+import SimpleForm from './features/formDevelopment/simpleForm'
 
 
 function App() {
@@ -36,7 +37,8 @@ function App() {
       {/* <CheckBox/> */}
       {/* <Stopwatchnew/> */}
       {/* <Formdemo/> */}
-      <FormikDemo/>
+      {/* <FormikDemo/> */}
+      <SimpleForm/>
     </>
   )
 }

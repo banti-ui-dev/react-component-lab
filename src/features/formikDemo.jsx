@@ -1,6 +1,6 @@
 import React from "react";
-import { useFormik } from "formik";
 import Button from "../components/Button";
+import { useFormik } from "formik";
 
 const FormikDemo = () => {
     const formik = useFormik({
@@ -9,10 +9,11 @@ const FormikDemo = () => {
             Mobile:null,
             City:null
         },
-        onSubmit: (user)=>{
+        onSubmit : (user) => {
             console.log(user);            
         }
     })
+   
   return (
     <div className="border w-lg p-6 m-4 rounded-2xl">
       <h2 className="mb-8 text-2xl">Registration</h2>
@@ -34,7 +35,7 @@ const FormikDemo = () => {
               type="text"
               name="Mobile"
               id=""
-              onChange={formik.handleChange}
+             onChange={formik.handleChange}
               className="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </dd>
@@ -43,7 +44,7 @@ const FormikDemo = () => {
             <select
               name="City"
               id=""
-              onChange={formik.handleChange}
+                onChange={formik.handleChange}
               className="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option value="">Select city...</option>
