@@ -17,6 +17,7 @@ import Stopwatchnew from './features/stopWatch'
 import Formdemo from './features/formDemo'
 import FormikDemo from './features/formikDemo'
 import SimpleForm from './features/formDevelopment/simpleForm'
+import FormikComponent from './features/formDevelopment/formikdemo'
 
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
       {/* <Stopwatchnew/> */}
       {/* <Formdemo/> */}
       {/* <FormikDemo/> */}
-      <SimpleForm/>
+      {/* <SimpleForm/> */}
+      <FormikComponent/>
     </>
   )
 }
