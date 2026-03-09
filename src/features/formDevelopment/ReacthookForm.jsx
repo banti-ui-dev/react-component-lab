@@ -6,12 +6,20 @@ const ReacthookForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   console.log(errors);
   const onSubmit = (value) => {
     console.log(value);
+    reset({
+  username: "",
+  mobile: "",
+  age: "",
+  city: "",
+});
   };
+  
   return (
     <div className="border w-lg p-6 m-4 rounded-2xl">
       <h1 className="text-2xl pb-4">React Hook Form</h1>
