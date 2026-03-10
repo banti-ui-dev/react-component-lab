@@ -1,11 +1,18 @@
-import { react } from "react";
+import { react, useState } from "react";
 import Datagrid from "./Datagrid";
 
-const DontrolledDemo = () => {
+const ControlledDemo = () => {
+  const [layout,setLayout] = useState('grid')
   return (
     <div>
-      <h2>Employee Details</h2>
+      <h2>Employee Details 
+        <select name="" id="" onChange={e=>setLayout(e.target.value)}>
+          <option value="grid">Grid</option>
+          <option value="card">Card</option>
+        </select>
+      </h2>
       <Datagrid
+        layout={layout}
         fields={["First Name", "Last Name", "Designation", "Salary"]}
         data={[
           {
@@ -22,7 +29,8 @@ const DontrolledDemo = () => {
           },
         ]}
       />
+     
     </div>
   );
 };
-export default DontrolledDemo;
+export default ControlledDemo;

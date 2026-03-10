@@ -20,6 +20,7 @@ import SimpleForm from './features/formDevelopment/simpleForm'
 import FormikComponent from './features/formDevelopment/formikdemo'
 import ReacthookForm from './features/formDevelopment/ReacthookForm'
 import DontrolledDemo from './features/controlled-component/DontrolledDemo'
+import ConditionDemo from './features/condition-demo/ConditionDemo'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
       {/* <FormikComponent/> */}
       {/* <ReacthookForm/> */}
       <DontrolledDemo/>
+      {/* <ConditionDemo/> */}
     </>
   )
 }
