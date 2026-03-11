@@ -43,15 +43,15 @@ function App() {
       {/* <CaroselDemo/> */}
       {/* <CheckBox/> */}
       {/* <Stopwatchnew/> */}
-      {/* <Formdemo/> */}
+      <Formdemo/>
       {/* <FormikDemo/> */}
       {/* <SimpleForm/> */}
       {/* <FormikComponent/> */}
       {/* <ReacthookForm/> */}
       {/* <ControlledDemo/> */}
       {/* <ConditionDemo/> */}
-      <ControlledTest/>
-      <ControlledObj/>
+      {/* <ControlledTest/>
+      <ControlledObj/> */}
     </>
   )
 }

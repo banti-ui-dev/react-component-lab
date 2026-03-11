@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
+import useCaptcha from "../hooks/use-captcha";
 
 const Formdemo = () => {
   const [userDetails, setUserDetails] = useState({
@@ -33,7 +34,7 @@ const Formdemo = () => {
       City: e.target.value,
     });
   };
-
+  const code = useCaptcha();
   return (
     <div className="border w-lg p-6 m-4 rounded-2xl">
       <h2 className="mb-8 text-2xl">Registration</h2>
@@ -72,6 +73,8 @@ const Formdemo = () => {
               <option value="Delhi">Delhi</option>
             </select>
           </dd>
+          <dt>Verify Code <Button >refresh code</Button></dt> 
+          <dd>{code}</dd>
         </dl>
         <Button type="submit" onClick={handleSubmit}>
           Register
