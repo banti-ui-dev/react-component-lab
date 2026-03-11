@@ -22,6 +22,8 @@ import ReacthookForm from './features/formDevelopment/ReacthookForm'
 import DontrolledDemo from './features/controlled-component/ControlledDemo'
 import ConditionDemo from './features/condition-demo/ConditionDemo'
 import ControlledDemo from './features/controlled-component/ControlledDemo'
+import ControlledTest from './features/controlled-component/ControlledTest'
+import ControlledObj from './features/controlled-component/ControlledObj'
 
 
 function App() {
@@ -47,7 +49,9 @@ function App() {
       {/* <FormikComponent/> */}
       {/* <ReacthookForm/> */}
       {/* <ControlledDemo/> */}
-      <ConditionDemo/>
+      {/* <ConditionDemo/> */}
+      <ControlledTest/>
+      <ControlledObj/>
     </>
   )
 }

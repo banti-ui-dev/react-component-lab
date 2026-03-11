@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 const Button = ({ children, variant = "primary", className, ...props }) => {
   const baseStyles =
-    "inline-flex items-center justify-center border border-transparent shadow-sm font-medium leading-5 rounded text-sm px-4 py-2.5 focus:outline-none focus:ring-4";
+    "inline-flex items-center justify-center border border-transparent shadow-sm font-medium leading-5 rounded text-sm px-2 py-1 m-1  focus:outline-none focus:ring-4";
   const variants = {
     primary: "text-white bg-brand hover:bg-brand-strong focus:ring-brand-medium",
     secondary: "text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-gray-300",
