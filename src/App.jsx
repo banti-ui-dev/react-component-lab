@@ -27,6 +27,7 @@ import ControlledObj from './features/controlled-component/ControlledObj'
 import CustomHookuse from './features/CustomHookuse'
 import FilterData from './features/hooktest/filterData'
 import TitleCase from './features/hooktest/titleCase'
+import LifeCycledemo from './features/life-cycle-demo/lifeCycledemo'
 
 
 function App() {
@@ -57,7 +58,8 @@ function App() {
       <ControlledObj/> */}
       {/* <CustomHookuse/> */}
       {/* <FilterData/> */}
-      <TitleCase/>
+      {/* <TitleCase/> */}
+      <LifeCycledemo/>
     </>
   )
 }
