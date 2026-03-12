@@ -24,6 +24,9 @@ import ConditionDemo from './features/condition-demo/ConditionDemo'
 import ControlledDemo from './features/controlled-component/ControlledDemo'
 import ControlledTest from './features/controlled-component/ControlledTest'
 import ControlledObj from './features/controlled-component/ControlledObj'
+import CustomHookuse from './features/CustomHookuse'
+import FilterData from './features/hooktest/filterData'
+import TitleCase from './features/hooktest/titleCase'
 
 
 function App() {
@@ -43,7 +46,7 @@ function App() {
       {/* <CaroselDemo/> */}
       {/* <CheckBox/> */}
       {/* <Stopwatchnew/> */}
-      <Formdemo/>
+      {/* <Formdemo/> */}
       {/* <FormikDemo/> */}
       {/* <SimpleForm/> */}
       {/* <FormikComponent/> */}
@@ -52,6 +55,9 @@ function App() {
       {/* <ConditionDemo/> */}
       {/* <ControlledTest/>
       <ControlledObj/> */}
+      {/* <CustomHookuse/> */}
+      {/* <FilterData/> */}
+      <TitleCase/>
     </>
   )
 }
