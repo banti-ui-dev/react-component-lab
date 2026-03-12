@@ -28,6 +28,7 @@ import CustomHookuse from './features/CustomHookuse'
 import FilterData from './features/hooktest/filterData'
 import TitleCase from './features/hooktest/titleCase'
 import LifeCycledemo from './features/life-cycle-demo/lifeCycledemo'
+import ContextDemo from './features/context-demo/contextDemo'
 
 
 function App() {
@@ -59,7 +60,8 @@ function App() {
       {/* <CustomHookuse/> */}
       {/* <FilterData/> */}
       {/* <TitleCase/> */}
-      <LifeCycledemo/>
+      {/* <LifeCycledemo/> */}
+      <ContextDemo/>
     </>
   )
 }
