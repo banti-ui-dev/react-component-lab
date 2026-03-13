@@ -1,29 +1,16 @@
 import { createContext, useContext, useState } from "react";
-let userContext = createContext(null);
+import ChildLavelone from "./ChildLavelone";
+import UserContext from "./userContext";
 
-export function Lavel2() {
-  const context = useContext(userContext);
-  return (
-    <div className="bg-green-700 text-yellow-300 p-4 m-4">
-      <h3 className="text-2xl">Lavel - 2 - {context}</h3>
-    </div>
-  );
-}
-
-export function Lavel1() {
-  const context = useContext(userContext);
-  return (
-    <div className="bg-amber-700 text-yellow-300 p-4 m-4">
-      <h3 className="text-2xl">Lavel - 1 - {context}</h3>
-      <Lavel2 />
-    </div>
-  );
-}
 const ContextDemo = () => {
   const [msg, setMsg] = useState("Welcome");
+  const [msgfromChild, setMsgfromChild] = useState({Name:null, Ratting:0});
   const handleNameChnage = (e) => {
-    setMsg(e.target.value)
-  }
+    setMsg(e.target.value);
+  };
+  const handleChildClick = (e) => {
+    setMsgfromChild(e);
+  };
   return (
     <div className="mx-4 bg-black text-white p-4 mt-3">
       <div>
@@ -34,10 +21,10 @@ const ContextDemo = () => {
           onChange={handleNameChnage}
         />
       </div>
-      <h2 className="text-2xl">Parent Component - {msg}</h2>
-      <userContext.Provider value={msg}>
-        <Lavel1 />
-      </userContext.Provider>
+      <h2 className="text-2xl">Parent Component - {msg} - {msgfromChild.Name} {msgfromChild.Ratting}</h2>
+      <UserContext.Provider value={msg}>
+        <ChildLavelone onChildclick={handleChildClick} />
+      </UserContext.Provider>
     </div>
   );
 };
