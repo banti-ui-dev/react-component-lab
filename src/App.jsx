@@ -29,6 +29,7 @@ import FilterData from './features/hooktest/filterData'
 import TitleCase from './features/hooktest/titleCase'
 import LifeCycledemo from './features/life-cycle-demo/lifeCycledemo'
 import ContextDemo from './features/context-demo/contextDemo'
+import FakestoreIndex from './features/fakestore/fakestore-index'
 
 
 function App() {
@@ -61,7 +62,8 @@ function App() {
       {/* <FilterData/> */}
       {/* <TitleCase/> */}
       {/* <LifeCycledemo/> */}
-      <ContextDemo/>
+      {/* <ContextDemo/> */}
+      <FakestoreIndex/>
     </>
   )
 }
