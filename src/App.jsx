@@ -31,6 +31,7 @@ import LifeCycledemo from './features/life-cycle-demo/lifeCycledemo'
 import ContextDemo from './features/context-demo/contextDemo'
 import FakestoreIndex from './features/fakestore/fakestore-index'
 import TestNew from './features/TestNew'
+import ParentContext from './features/useContext/parentContext'
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
       {/* <ContextDemo/> */}
       <FakestoreIndex/>
       {/* <TestNew/> */}
+      {/* <ParentContext/> */}
     </>
   )
 }

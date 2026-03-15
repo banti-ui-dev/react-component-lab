@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import FakestoreProduct from "./fakestore-product";
+import ProductContext from "./productContext";
 
 const FakestoreIndex = () => {
   const [cartItem, setCartItem] = useState([]);
   const [cartItemcount, setCartItemcount] = useState(0);
   const [showCart, setShowCart] = useState(null);
+  const [search, setSearch] = useState("");
   const handleAddtoCartClick = (e) => {
     cartItem.push(e);
     // alert(`${e.title}\nAdded to cart`);
@@ -16,11 +18,14 @@ const FakestoreIndex = () => {
     setShowCart(!showCart);
   };
   const handleDelete = (index) => {
-    const updatedItem =  cartItem.filter((_,i) => i !== index)
-    setCartItem(updatedItem)
+    const updatedItem = cartItem.filter((_, i) => i !== index);
+    setCartItem(updatedItem);
     setCartItemcount(updatedItem.length);
-  }
+  };
+  
   return (
+
+    //Parent Component
     <div className="container mx-auto px-8">
       <header className="flex items-center justify-between">
         <h3>Fake Store</h3>
@@ -28,6 +33,8 @@ const FakestoreIndex = () => {
           <input
             type="text"
             placeholder="Search..."
+            value={search}
+            onChange={e=>setSearch(e.target.value)}
             className="border border-gray-300 px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button className="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">
@@ -62,13 +69,7 @@ const FakestoreIndex = () => {
           >
             <div className="flex justify-between items-center p-4 border-b">
               <h3 className="font-bold text-lg">Cart</h3>
-              <button
-                onClick={toggleCartDrawer}
-                className="text-gray-500 hover:text-black"
-              >
-                {" "}
-                ✕{" "}
-              </button>
+              <button onClick={toggleCartDrawer} className="text-gray-500 hover:text-black">✕</button>
             </div>
             <div className="p-4">
               <h3>Your Cart Items</h3>
@@ -76,21 +77,25 @@ const FakestoreIndex = () => {
                 <table>
                   <thead>
                     <tr>
-                      <th align="left" width="35%"> Title </th>
+                      <th align="left" width="35%">Title</th>
                       <th align="left" width="25%">Priview</th>
                       <th align="right" width="30%">Price</th>
                       <th align="right" width="10%">&nbsp;&nbsp;&nbsp;</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {cartItem.map((item,index) => (
+                    {cartItem.map((item, index) => (
                       <tr key={item.id}>
                         <td width="35%">{item.title}</td>
                         <td width="25%">
                           <img src={item.image} height="50" width="50" />
                         </td>
-                        <td align="right" width="30%">{item.price}</td>
-                        <td align="right" idth="10%"><button onClick={() => handleDelete(index)}>X</button></td>
+                        <td align="right" width="30%">
+                          {item.price}
+                        </td>
+                        <td align="right" idth="10%">
+                          <button onClick={() => handleDelete(index)}>X</button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -102,7 +107,10 @@ const FakestoreIndex = () => {
       </header>
 
       <div>
-        <FakestoreProduct addTocart={handleAddtoCartClick} />
+        <ProductContext.Provider value={search}> 
+          <FakestoreProduct addTocart={handleAddtoCartClick} />
+        </ProductContext.Provider>
+        
       </div>
     </div>
   );
