@@ -32,6 +32,7 @@ import ContextDemo from './features/context-demo/contextDemo'
 import FakestoreIndex from './features/fakestore/fakestore-index'
 import TestNew from './features/TestNew'
 import ParentContext from './features/useContext/parentContext'
+import ReducerDemo from './features/reducer-demo/reducerDemo'
 
 
 function App() {
@@ -58,16 +59,17 @@ function App() {
       {/* <ReacthookForm/> */}
       {/* <ControlledDemo/> */}
       {/* <ConditionDemo/> */}
-      {/* <ControlledTest/>
-      <ControlledObj/> */}
+      {/* <ControlledTest/> */}
+      {/* <ControlledObj/> */}
       {/* <CustomHookuse/> */}
       {/* <FilterData/> */}
       {/* <TitleCase/> */}
       {/* <LifeCycledemo/> */}
       {/* <ContextDemo/> */}
-      <FakestoreIndex/>
+      {/* <FakestoreIndex/> */}
       {/* <TestNew/> */}
       {/* <ParentContext/> */}
+      <ReducerDemo/>
     </>
   )
 }
