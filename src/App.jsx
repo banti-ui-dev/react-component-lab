@@ -35,6 +35,7 @@ import ParentContext from './features/useContext/parentContext'
 import ReducerDemo from './features/reducer-demo/reducerDemo'
 import FormData from './features/condition-demo/FormData'
 import Portfolioindex from './features/portfolio/portfolio-index'
+import ShoppingIndex from './shopping/shoppingIndex'
 
 
 function App() {
@@ -73,7 +74,8 @@ function App() {
       {/* <ParentContext/> */}
       {/* <ReducerDemo/> */}
       {/* <FormData/> */}
-      <Portfolioindex/>
+      {/* <Portfolioindex/> */}
+      <ShoppingIndex/>
     </>
   )
 }
