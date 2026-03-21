@@ -33,6 +33,8 @@ import FakestoreIndex from './features/fakestore/fakestore-index'
 import TestNew from './features/TestNew'
 import ParentContext from './features/useContext/parentContext'
 import ReducerDemo from './features/reducer-demo/reducerDemo'
+import FormData from './features/condition-demo/FormData'
+import Portfolioindex from './features/portfolio/portfolio-index'
 
 
 function App() {
@@ -69,7 +71,9 @@ function App() {
       {/* <FakestoreIndex/> */}
       {/* <TestNew/> */}
       {/* <ParentContext/> */}
-      <ReducerDemo/>
+      {/* <ReducerDemo/> */}
+      {/* <FormData/> */}
+      <Portfolioindex/>
     </>
   )
 }

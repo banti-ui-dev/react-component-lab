@@ -1,11 +1,20 @@
 import React, { useReducer } from "react";
+
+
+//Global Store having only keys and values
 let initialValue = { userCount: 0 };
+
+
+//Reducer can acces the initila state and the action like edit update delete
 const reducer = (state, action) => {
   switch (action.type) {
     case "Join": return { userCount: state.userCount + 1 };
     case "Exit": return { userCount: state.userCount - 1 };
   }
 };
+
+
+//Component 
 const ReducerDemo = () => {
   const [state, dispatch] = useReducer(reducer, initialValue)
   const handleJoinClick = () => {
