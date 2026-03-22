@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, Links, Outlet, useParams } from "react-router-dom";
+import { Link, Links, Outlet, useNavigate, useParams } from "react-router-dom";
+import Button from "../components/Button";
 
 const ShoppingProducts = () => {
   const [products, setPrducts] = useState([]);
   let params = useParams();
+  let navigate = useNavigate();
   useEffect(() => {
     axios
       .get(`https://fakestoreapi.com/products/category/${params.category}`)
@@ -12,6 +14,9 @@ const ShoppingProducts = () => {
         setPrducts(response.data);
       });
   }, []);
+  const handleHomeClick = () => {
+    navigate("/");
+  };
   return (
     <div>
       <div className="grid grid-cols-3 gap-4">
@@ -26,12 +31,16 @@ const ShoppingProducts = () => {
               ))}
             </ol>
           </div>
-          <Link to="/" className="text-blue-900 font-bold border py-2 px-3 rounded-sm" >
+          <Link
+            to="/"
+            className="text-blue-900 font-bold border py-2 px-3 rounded-sm"
+          >
             Back to Home
           </Link>
+          <Button onClick={handleHomeClick}>Home</Button>
         </div>
         <div>
-            <Outlet/>
+          <Outlet />
         </div>
       </div>
     </div>
