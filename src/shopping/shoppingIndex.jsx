@@ -5,6 +5,8 @@ import ShoppingProducts from "./shoppingProducts";
 import ShoppingDetails from "./shoppingDetails";
 import ShoppingSearch from "./shoppingSearch";
 import ShoppingSearchResult from "./shoppingSearchResult";
+import ShoppingPrime from "./shoppingPrime";
+import PrimeLogin from "./primeLogin";
 
 const ShoppingIndex = () => {
   return (
@@ -15,6 +17,10 @@ const ShoppingIndex = () => {
             <span className="font-bold text-2xl">Shopping</span>
             <div>
                 <Link to="/search">Search Products</Link>
+                <span> | </span>
+                <Link to="/prime">Prime Members</Link>
+                <span> | </span>
+                <Link to="/login">Prime Login</Link>
             </div>
           </div>
         </header>
@@ -26,6 +32,8 @@ const ShoppingIndex = () => {
             </Route>
             <Route path="search" element={<ShoppingSearch/>}/>
             <Route path="searchResult" element={<ShoppingSearchResult/>}/>
+            <Route path="prime" element={<ShoppingPrime/>}/>
+            <Route path="login" element={<PrimeLogin/>}/>
           </Routes>
         </section>
       </BrowserRouter>
