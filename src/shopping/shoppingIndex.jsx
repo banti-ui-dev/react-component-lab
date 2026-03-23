@@ -36,7 +36,7 @@ const ShoppingIndex = () => {
             <Route path="login" element={<PrimeLogin/>}/>
           </Routes>
         </section>
-      </BrowserRouter>
+      </BrowserRouter> 
     </div>
   );
 };

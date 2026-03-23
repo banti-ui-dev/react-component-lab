@@ -12,7 +12,7 @@ const PrimeLogin = () => {
     window.sessionStorage.setItem('uname', username);
     navigate('/prime');
   }
-  return (
+  return ( 
     <div>
       <h3>Prime User Login</h3>
       <input
