@@ -1,0 +1,48 @@
+{
+    "admin":[
+        {
+            "id": "1",
+            "admin_id": "banti_admin", 
+            "password": "banti123"
+        }
+    ],
+    "users":[
+        {
+            "id": "1",
+            "user_id": "swati_nit",
+            "user_name": "swati",
+            "password": "swati123",
+            "email": "swativerma@gmail.com"
+        }
+    ],
+    "categories":[
+        {
+            "id":"1",
+            "category_id": 1,
+            "category_name": "Java"
+        },
+        {
+            "id":"2",
+            "category_id": 2,
+            "category_name": "React"
+        },
+        {
+            "id":"3",            
+            "category_id": 3,
+            "category_name": "AWS"
+        }
+    ],
+    "videos": [
+        {
+            "id":"1",
+            "video_title": "Java Streaming Video",
+            "description": "Java Tutorials",
+            "url": "https://www.youtube.com/embed/z3OmrUZJnCc?si=tRPUDFdZgSIQ2ywd",
+            "likes": 200,
+            "dislikes": 5,
+            "views": 500,
+            "comments": "Thank you",
+            "category_id": 1
+        }
+    ]
+}

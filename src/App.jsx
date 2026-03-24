@@ -36,6 +36,7 @@ import ReducerDemo from './features/reducer-demo/reducerDemo'
 import FormData from './features/condition-demo/FormData'
 import Portfolioindex from './features/portfolio/portfolio-index'
 import ShoppingIndex from './shopping/shoppingIndex'
+import VideoTutorialIndex from './videoTutorial/videoTutorialIndex'
 
 
 function App() {
@@ -75,7 +76,8 @@ function App() {
       {/* <ReducerDemo/> */}
       {/* <FormData/> */}
       {/* <Portfolioindex/> */}
-      <ShoppingIndex/>
+      {/* <ShoppingIndex/> */}
+      <VideoTutorialIndex/>
     </>
   )
 }
