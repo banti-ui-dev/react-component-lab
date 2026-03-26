@@ -3,8 +3,8 @@ import Button from '../components/Button'
 
 const Counter = () => {
 const[count,setCount] = useState(0);
-const handleIncrement = ()=>{setCount(count+1)}
-const handleDecrement = ()=>{count <= 0 ? setCount(0) : setCount(count-1)}
+const handleIncrement = ()=>{setCount((prev) => prev+1)}
+const handleDecrement = ()=>{setCount((prev) => (prev > 0 ? prev - 1 : 0))}
 const handleReset = ()=>{setCount(0)}
   return (
     <div>

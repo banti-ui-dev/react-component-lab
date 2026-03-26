@@ -37,6 +37,10 @@ import FormData from './features/condition-demo/FormData'
 import Portfolioindex from './features/portfolio/portfolio-index'
 import ShoppingIndex from './shopping/shoppingIndex'
 import VideoTutorialIndex from './videoTutorial/videoTutorialIndex'
+import UseMemoPractice from './features/practiceSet/useMemoPractice'
+import StopwatchPractice from './features/practiceSet/StopwatchPractice'
+import DebouncePractice from './features/practiceSet/DebouncePractice'
+import DebounceNormal from './features/practiceSet/debounceNormal'
 
 
 function App() {
@@ -77,7 +81,11 @@ function App() {
       {/* <FormData/> */}
       {/* <Portfolioindex/> */}
       {/* <ShoppingIndex/> */}
-      <VideoTutorialIndex/>
+      {/* <VideoTutorialIndex/> */}
+      {/* <UseMemoPractice/> */}
+      {/* <StopwatchPractice/> */}
+      {/* <DebouncePractice/> */}
+      <DebounceNormal/>
     </>
   )
 }
