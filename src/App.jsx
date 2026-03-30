@@ -41,6 +41,10 @@ import UseMemoPractice from './features/practiceSet/useMemoPractice'
 import StopwatchPractice from './features/practiceSet/StopwatchPractice'
 import DebouncePractice from './features/practiceSet/DebouncePractice'
 import DebounceNormal from './features/practiceSet/debounceNormal'
+import Objtodropdown from './features/practiceSet/objtodropdown'
+import Parent from './features/parenttoxhild/parentComponent'
+import PaginationExample from './features/practiceSet/pagination'
+import PromiseAll from './features/practiceSet/promiseAll'
 
 
 function App() {
@@ -85,7 +89,11 @@ function App() {
       {/* <UseMemoPractice/> */}
       {/* <StopwatchPractice/> */}
       {/* <DebouncePractice/> */}
-      <DebounceNormal/>
+      {/* <DebounceNormal/> */}
+      {/* <Objtodropdown/> */}
+      {/* <Parent/> */}
+      {/* <PaginationExample/> */}
+      <PromiseAll/>
     </>
   )
 }
