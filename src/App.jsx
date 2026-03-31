@@ -45,6 +45,7 @@ import Objtodropdown from './features/practiceSet/objtodropdown'
 import Parent from './features/parenttoxhild/parentComponent'
 import PaginationExample from './features/practiceSet/pagination'
 import PromiseAll from './features/practiceSet/promiseAll'
+import PaginationPractice from './features/practiceSet/paginationPractice'
 
 
 function App() {
@@ -86,14 +87,15 @@ function App() {
       {/* <Portfolioindex/> */}
       {/* <ShoppingIndex/> */}
       {/* <VideoTutorialIndex/> */}
-      {/* <UseMemoPractice/> */}
+      <UseMemoPractice/>
       {/* <StopwatchPractice/> */}
       {/* <DebouncePractice/> */}
       {/* <DebounceNormal/> */}
       {/* <Objtodropdown/> */}
       {/* <Parent/> */}
       {/* <PaginationExample/> */}
-      <PromiseAll/>
+      {/* <PromiseAll/> */}
+      {/* <PaginationPractice/> */}
     </>
   )
 }

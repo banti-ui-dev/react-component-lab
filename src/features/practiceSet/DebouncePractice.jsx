@@ -1,64 +1,57 @@
 import React, { useEffect, useState } from "react";
+import Button from "../../components/Button";
 
 const DebouncePractice = () => {
   const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState("");
-  const [timerdata, setTimerdata] = useState("");
+  const [page, setPage] = useState(1)
+  const [search, setSearch] = useState("")
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false)
+  const [timerdata, setTimerdata] = useState("")
+
   useEffect(() => {
-    const fetchProduct = async () => {
+    const fetchProducts = async () => {
+      setError(null);
+      setLoading(true)
       try {
-        const res = await fetch("https://fakestoreapi.com/products");
-        if (!res.ok) {
-          throw new error("Api error");
+        const response = await fetch(
+          `https://dummyjson.com/products?limit=10&skip=${page*10-10}`
+        );
+        if (!response.ok) {
+          throw new Error("API Error");
         }
-        const data = await res.json();
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (err) {
+        setError(err);
+      } finally{
+        setLoading(false)
       }
     };
-    fetchProduct();
-  }, []);
-
-  // filter data to search and pass by timer debaunce
-  useEffect(() => {
+    fetchProducts();
+  }, [page]);
+  useEffect(()=>{
+    setLoading(true)
     const timer = setTimeout(()=>{
-        setTimerdata(search)
+      setTimerdata(search)
+      setLoading(false)
     },1000)
     return () => clearTimeout(timer)
-  }, [search]);
-
-  const filterProduct = products.filter((product) =>
-    product.title.toLowerCase().includes(timerdata.toLowerCase()),
-  );
-
+  },[search])
+  const filteredData = products.filter(product => product.title.toLowerCase().includes(timerdata.toLowerCase()))
   return (
     <div>
-      <h2>DebouncePractice</h2>
-      <input
-        type="text"
-        placeholder="Search here ....."
-        className="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3"
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <table className="mt-6 w-full">
-        <thead>
-          <tr>
-            <td className="px-2 py-1 border">ID</td>
-            <td className="px-2 py-1 border">Title</td>
-            <td className="px-2 py-1 border">Descrition</td>
-          </tr>
-        </thead>
-        <tbody>
-          {filterProduct.map((product) => (
-            <tr key={product.id}>
-              <td className="px-2 py-1 border">{product.id}</td>
-              <td className="px-2 py-1 border">{product.title}</td>
-              <td className="px-2 py-1 border">{product.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {error && <p className="text-red-900">{error.message}</p>}
+      <input type="text" className="w-full p-2 border rounded-b-md" placeholder="Search......." onChange={(e)=>setSearch(e.target.value)}/>
+      {loading && <p className="text-center">Loading........</p>}
+      {filteredData.map((product) => (
+        <p key={product.id}>
+          {product.id}. {product.title}
+        </p>
+      ))}
+      <Button onClick={()=>setPage((prev)=>prev-1)}>prev</Button>
+      <Button onClick={()=>setPage((prev)=>prev+1)}>Next</Button>
+      <p>page number : {page}</p>
     </div>
   );
 };

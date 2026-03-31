@@ -1,47 +1,38 @@
 import React, { useEffect, useState } from "react";
 
 const PromiseAll = () => {
-    const [posts, setPost] = useState([])
+    const [posts, setPosts] = useState([])
     const [users, setUsers] = useState([])
 
     useEffect(()=>{
         const fetchdata = async() => {
-            const [postsRes, usersRes] = await Promise.all([
-                fetch("https://jsonplaceholder.typicode.com/posts"),
-                fetch("https://jsonplaceholder.typicode.com/users")
-            ])
-            const [postsData, usersData] = await Promise.all([
-                postsRes.json(),
-                usersRes.json(),
-            ])
-            setPost(postsData)
-            setUsers(usersData)
-        };
+            try{
+                const [resposts, resusers] = await Promise.all([
+                    fetch("https://jsonplaceholder.typicode.com/posts"),
+                    fetch("https://jsonplaceholder.typicode.com/users")
+                ])
+                const [postsData, usersData] = await Promise.all([
+                    resposts.json(),
+                    resusers.json()
+                ])
+                setPosts(postsData)
+                setUsers(usersData)
+            }
+            catch(err){console.log(err);}
+        }; 
         fetchdata()
     },[])
-
-
+    
   return (
     <div>
+        <h2>Fetch two Apis parallelly</h2>
         <div>
-            <h2>Users</h2>
-            {
-                users.slice(0,5).map((user)=>(
-                    <div key={user.id}>
-                        <p>{user.name}</p>
-                    </div>
-                ))
-            }
+            <h3>Posts</h3>
+            {posts.slice(0,5).map(post => <p key={post.id}>{post.id}. {post.title}</p>)}
         </div>
         <div>
-            <h2>Posts</h2>
-            {
-                posts.slice(0,5).map((post)=>(
-                    <div key={post.id}>
-                        <p>{post.title}</p>
-                    </div>
-                ))
-            }
+            <h3>Users</h3>
+            {users.slice(0,5).map(user => <p key={user.id}>{user.id}. {user.username}</p>)}
         </div>
     </div>
   )
