@@ -46,7 +46,7 @@ import Parent from './features/parenttoxhild/parentComponent'
 import PaginationExample from './features/practiceSet/pagination'
 import PromiseAll from './features/practiceSet/promiseAll'
 import PaginationPractice from './features/practiceSet/paginationPractice'
-import Apifatch from './features/apifatch'
+import ProductsList from './features/publicissapientTask/productsList'
 
 
 function App() {
@@ -97,7 +97,7 @@ function App() {
       {/* <PaginationExample/> */}
       {/* <PromiseAll/> */}
       {/* <PaginationPractice/> */}
-      <Apifatch/>
+      <ProductsList/>
     </>
   )
 }
