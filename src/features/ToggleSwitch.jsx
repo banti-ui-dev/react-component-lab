@@ -12,4 +12,4 @@ export default function ToggleSwitch() {
       <Button variant="danger" onClick={handleClick}>{active ? "Make Inactive" : "Make Active"}</Button>
     </>
   );
-}
+} 

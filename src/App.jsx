@@ -46,6 +46,7 @@ import Parent from './features/parenttoxhild/parentComponent'
 import PaginationExample from './features/practiceSet/pagination'
 import PromiseAll from './features/practiceSet/promiseAll'
 import PaginationPractice from './features/practiceSet/paginationPractice'
+import Apifatch from './features/apifatch'
 
 
 function App() {
@@ -87,7 +88,7 @@ function App() {
       {/* <Portfolioindex/> */}
       {/* <ShoppingIndex/> */}
       {/* <VideoTutorialIndex/> */}
-      <UseMemoPractice/>
+      {/* <UseMemoPractice/> */}
       {/* <StopwatchPractice/> */}
       {/* <DebouncePractice/> */}
       {/* <DebounceNormal/> */}
@@ -96,6 +97,7 @@ function App() {
       {/* <PaginationExample/> */}
       {/* <PromiseAll/> */}
       {/* <PaginationPractice/> */}
+      <Apifatch/>
     </>
   )
 }

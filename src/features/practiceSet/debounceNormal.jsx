@@ -21,6 +21,7 @@ const DebounceNormal = () => {
         value={search}
       />
     </div>
+    
   );
 };
 

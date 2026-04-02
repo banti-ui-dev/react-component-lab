@@ -5,22 +5,24 @@ const UseMemoPractice = () => {
   const [num, setNum] = useState(0);
   const [count, setCount] = useState(0);
 
-
-
   const calcValue = (num) => {
-    console.log("Calculation start ...");    
-    let sum = 0
-    for(let i = 0; i<100000000; i++){
-        sum += i
+    console.log("Calculation start ...");
+    let sum = 0;
+    for (let i = 0; i < 100000000; i++) {
+      sum += i;
     }
-    return sum + num
+    return sum + num;
+  };
+
+  const result = useMemo(() => {
+    return calcValue(num);
+  }, [num]);
+  
+  const[btn, setBtn] = useState("On")
+  const togglehandle = () => {
+    setBtn(prev=>!prev)
   }
-
-  const result = useMemo(()=>{
-    return calcValue(num)
-  },[num])
-
-
+  
 
   return (
     <div>
@@ -29,6 +31,7 @@ const UseMemoPractice = () => {
       <Button onClick={() => setCount((prev) => prev + 1)}>
         Other State {count}
       </Button>
+      <Button onClick={togglehandle}>{btn ? "On" : "Off"}</Button>
     </div>
   );
 };
